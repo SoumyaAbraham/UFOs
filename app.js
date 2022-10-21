@@ -12,7 +12,7 @@ function buildTable(data){
 //loop thorugh each object
 //append a row and cell for each value
 data.forEach((dataRow)=> {
-      // append to table
+      // append new row to table
     let row = tbody.append("tr");
 
     // loop though each field in the dataRow and 
@@ -24,3 +24,24 @@ data.forEach((dataRow)=> {
     });
 });
 }
+
+function handleClick(){
+ let date = d3.select("#datetime").property("value");   
+// set default filter to original table
+let filteredData = tableData;
+// filter by date:
+if (date){
+    filteredData= filteredData.filter(row =>row.datetime === date);
+}
+
+// Rebuild the table using the filtered data
+// If no date was entered, the data table remains the original 
+
+buildTable(filteredData);
+}
+
+// Attach an event to listen for the form button
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+// Build the table when the page loads
+buildHandle(tableData);

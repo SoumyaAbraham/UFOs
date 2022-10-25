@@ -2,7 +2,7 @@
 
 ### Overview  
 A large amount of data related to possible UFO sightings is provided. To make it more accessible to UFO enthusiasts, a webpage is created with a brief introductory welcome and filter options for the rather long table full of juicy data!
-To make the experience more dynamic, the following searches are added:  
+For a more dynamic experience, the following searches options are added:  
   - date
   - city
   - state
